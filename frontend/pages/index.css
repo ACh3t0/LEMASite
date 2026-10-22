@@ -1,0 +1,166 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding:0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.menuContainer {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    min-height: 141px;
+    padding: 25px 30px;
+    background: #606163;
+}
+
+.logo {
+    display: block;
+    flex: 0 0 148px;
+    line-height: 0;
+    position: relative;
+    width: 148px;
+    height: 82px;
+    overflow: hidden;
+    mix-blend-mode: multiply;
+}
+
+.logo img {
+    position: absolute;
+    width: 174px;
+    height: auto;
+    max-width: none;
+    left: -12px;
+    top: -40px;
+}
+
+.menuOptions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    width: 100%;
+    max-width: 1008px;
+}
+
+.menuOptions a {
+    color: #000;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.menuOptions a.active,
+.menuOptions a:hover,
+.menuOptions a:focus-visible {
+    color: #fff;
+}
+
+main {
+    min-height: calc(100vh - 161px);
+    background: #fff;
+}
+
+@media (max-width: 1100px) {
+    .menuContainer {
+        gap: 35px;
+    }
+
+    .menuOptions {
+        gap: 24px;
+        flex-wrap: wrap;
+    }
+
+    .menuOptions a {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 12px 12px 0;
+    }
+
+    .menuContainer {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .logo {
+        flex-basis: auto;
+    }
+
+    .menuOptions {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .menuOptions a {
+        font-size: 20px;
+    }
+}
+
+.que-hacemos {
+    background-color: rgba(82, 68, 40, 0.473);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.foco {
+    background-color: rgb(245, 139, 0);
+    height: 300px;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.engranaje {
+    background-color: rgb(245, 139, 0);
+    height: 300px;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.code {
+    background-color: rgb(245, 139, 0);
+    height: 300px;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.focoIMG {
+    background-color: rgb(245, 139, 0);
+    height: 150px;
+    
+
+}
+
+.engranajeIMG {
+    background-color: rgb(245, 139, 0);
+    height: 150px;
+
+}
+
+.codeIMG {
+    background-color: rgb(245, 139, 0);
+    height: 150px;
+}
+
