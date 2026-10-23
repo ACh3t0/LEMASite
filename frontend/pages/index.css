@@ -3,6 +3,9 @@
 }
 
 body {
+    background-image: url(../img/Fondo.png);
+    background-size: cover;
+    background-attachment: fixed;
     margin: 0;
     padding:0;
     min-height: 100vh;
@@ -12,48 +15,41 @@ body {
 .menuContainer {
     display: flex;
     align-items: center;
-    gap: 80px;
-    min-height: 141px;
+    gap: 10%; /* Separación entre el logo y el menú. */
+    min-height: 10px;
     padding: 25px 30px;
-    background: #606163;
+    background: #60616399;
 }
 
 .logo {
-    display: block;
-    flex: 0 0 148px;
-    line-height: 0;
-    position: relative;
-    width: 148px;
-    height: 82px;
-    overflow: hidden;
-    mix-blend-mode: multiply;
+    margin-left: 5%;
+    width: 200px;
+    height: 100px;
 }
 
-.logo img {
-    position: absolute;
-    width: 174px;
-    height: auto;
-    max-width: none;
-    left: -12px;
-    top: -40px;
+.LEMA {
+    width: 200px;
+    height: 100px;
 }
 
 .menuOptions {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
-    gap: 40px;
+    justify-content: flex-start; /* Mantiene las opciones juntas al inicio. */
+    gap: 100px; /* Separación entre las opciones del menú. */
     width: 100%;
-    max-width: 1008px;
+    min-width: 0;
 }
 
 .menuOptions a {
     color: #000;
-    font-size: 34px;
+    font-size: clamp(20px, 2vw, 34px);
     font-weight: 700;
     line-height: 1.2;
     text-decoration: none;
     white-space: nowrap;
+    font-size: 15px;
 }
 
 .menuOptions a.active,
@@ -64,7 +60,7 @@ body {
 
 main {
     min-height: calc(100vh - 161px);
-    background: #fff;
+    background: transparent;
 }
 
 @media (max-width: 1100px) {
@@ -107,60 +103,87 @@ main {
     }
 }
 
+.quienes-somos {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.quienes-somosCard {
+    background-color: #60616399;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 50px;
+}
+
+.quienes-somos h1 {
+    margin-bottom: 4%;
+    color: #fff;
+}
+
+.quienes-somos h2{
+    text-align: center;
+    color: #fff;
+    margin: 30px;
+}
+
 .que-hacemos {
-    background-color: rgba(82, 68, 40, 0.473);
-    height: 100%;
+    background-color: #606163a0;
+    color: #fff;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    gap: 150px;
+    padding: 80px 24px 0;
 }
 
-.foco {
-    background-color: rgb(245, 139, 0);
-    height: 300px;
-    width: 30%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.engranaje {
-    background-color: rgb(245, 139, 0);
-    height: 300px;
-    width: 30%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
-}
-
+.foco,
+.engranaje, 
 .code {
-    background-color: rgb(245, 139, 0);
     height: 300px;
-    width: 30%;
+    flex: 0 1 280px;
+    min-width: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    text-align: center;
 }
 
-.focoIMG {
-    background-color: rgb(245, 139, 0);
-    height: 150px;
-    
-
-}
-
-.engranajeIMG {
-    background-color: rgb(245, 139, 0);
-    height: 150px;
-
-}
-
+.focoIMG,
+.engranajeIMG,
 .codeIMG {
-    background-color: rgb(245, 139, 0);
+    border: 3px solid #000;
+    border-radius: 20px;
+    padding: 12px;
+    box-sizing: content-box;
+    background-color: rgba(255, 145, 0, 0.36);
     height: 150px;
+    margin-bottom: 30px;
+    margin-top: 5%;
+}
+
+
+.que-hacemos2 {
+    background-color: #606163a0;
+    height: 250px;
+    display: flex;
+    justify-content: left;
+    align-items: end;
+}
+
+.que-hacemos2 h1{
+    color: #fff;
+    margin-left: 15%;
+}
+
+.que-hacemos2 h3{
+    color: #fff;
+    margin-left: 10%;
 }
 
