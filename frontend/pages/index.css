@@ -18,7 +18,7 @@ body {
     gap: 10%; /* Separación entre el logo y el menú. */
     min-height: 10px;
     padding: 25px 30px;
-    background: #60616399;
+    background: #454546;
 }
 
 .logo {
@@ -112,7 +112,7 @@ main {
 }
 
 .quienes-somosCard {
-    background-color: #60616399;
+    background-color: #454546;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -132,7 +132,7 @@ main {
 }
 
 .que-hacemos {
-    background-color: #606163a0;
+    background-color: #454546;
     color: #fff;
     display: flex;
     flex-wrap: wrap;
@@ -162,7 +162,7 @@ main {
     border-radius: 20px;
     padding: 12px;
     box-sizing: content-box;
-    background-color: rgba(255, 145, 0, 0.36);
+    background-color: rgb(255, 145, 0);
     height: 150px;
     margin-bottom: 30px;
     margin-top: 5%;
@@ -170,16 +170,19 @@ main {
 
 
 .que-hacemos2 {
-    background-color: #606163a0;
+    background-color: #454546;
     height: 250px;
     display: flex;
     justify-content: left;
-    align-items: end;
+    align-items: center;
 }
 
 .que-hacemos2 h1{
+    width: 300px;
     color: #fff;
     margin-left: 15%;
+    display: flex;
+    justify-content: end;
 }
 
 .que-hacemos2 h3{
@@ -187,3 +190,72 @@ main {
     margin-left: 10%;
 }
 
+.productos h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    margin-top: 150px;
+}
+
+.cartas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 250px));
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 24px;
+}
+
+.carta {
+  width: 100%;
+  aspect-ratio: 1;
+  min-width: 0;
+  perspective: 1000px;
+}
+
+.carta-interior {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.carta:hover .carta-interior {
+  transform: rotateY(180deg);
+}
+
+.frente, .atras {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.frente {
+    background-color: rgb(255, 145, 0);
+    display: flex;
+    align-items: center;
+}
+
+.frente img {
+    height: 130px;
+    width: 130px;
+}
+
+.carta-interior h3 {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    text-align: center;
+}
+.atras {
+    background-color: #454546;
+    transform: rotateY(180deg);
+}
