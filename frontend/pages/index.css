@@ -18,7 +18,7 @@ body {
     gap: 10%; /* Separación entre el logo y el menú. */
     min-height: 10px;
     padding: 25px 30px;
-    background: #464645;
+    background: #c5a16a;
 }
 
 .logo {
@@ -113,7 +113,6 @@ main {
 
 .quienes-somosCard {
     border-radius: 50px;
-    background-color: #bdbdbd96;
     display: flex;
     justify-content: center;
     align-items: center;

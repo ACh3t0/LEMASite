@@ -5,6 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LEMA</title>
     <link rel="stylesheet" href="index.css">
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCXnJdfX2z2QYaR2eB3ZjcGWUp-cRdgZpk",
+           authDomain: "lemamedia-3a199.firebaseapp.com",
+            projectId: "lemamedia-3a199",
+            storageBucket: "lemamedia-3a199.firebasestorage.app",
+            messagingSenderId: "690484945669",
+            appId: "1:690484945669:web:ba2212881108cb543f4d6c",
+            measurementId: "G-BHXMXDWGV3"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+    </script>
+
 </head>
 <body>
     <div class="menuContainer">
