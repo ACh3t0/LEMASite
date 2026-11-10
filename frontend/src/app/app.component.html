@@ -1,27 +1,83 @@
 <div class="menuContainer">
-        <a class="logo" href="#" aria-label="LEMA Systems, inicio">
+    <a class="logo" href="#" aria-label="LEMA Systems, inicio">
             <img class="LEMA" src="img/LEMA.png" alt="LEMA Systems">
         </a>
         <nav class="menuOptions" aria-label="Navegación principal">
-            <a href="#quienes-somos">¿Quiénes somos?</a>
+            <a href="#productos">Empresa</a>
             <a href="#que-hacemos">¿Que hacemos?</a>
-            <a href="#productos">Productos</a>
+            <details class="productos-desplegable" #menuProductos (keydown.escape)="menuProductos.open = false">
+                <summary>Productos</summary>
+                <div class="productos-opciones">
+                    <a href="#lema-nom" (click)="cerrarMenuProductos(menuProductos)">Lema NOM</a>
+                    <a href="#lema-check" (click)="cerrarMenuProductos(menuProductos)">LEMA Check</a>
+                </div>
+            </details>
             <a href="#beneficios">Beneficios</a>
             <a href="#redes">Redes y más</a>
+            <a href="#contactanos">Contáctanos</a>
         </nav>
         
     </div>
     <main>
+        <button class="volver-arriba" type="button" (click)="volverArriba()" aria-label="Volver al inicio de la p&aacute;gina" title="Volver arriba">
+            <span aria-hidden="true"></span>
+        </button>
+        <a href="https://wa.me/+528121084574" class="burbuja-whatsapp" target="_blank" rel="noopener noreferrer">
+            <img src="../img/whatsapp.png" alt="whatsappIcon" class="whatsappIcon">
+        </a>
 
-        <div class="quienes-somos" id="quienes-somos">
-            <div class="quienes-somosCard">
-                <h1>¿Quienes somos?</h1>
-                <h2>Somos una empresa enfocada en el diseño y desarrollo de plataformas que transforman los procesos<br> 
-                en soluciones digitales,  buscamos ayudar a empresas y despachos profesionales a ser más eficientes,<br> 
-                organizados y competitivos</h2>
+        
+        <section class="productos" id="productos" aria-labelledby="productos-titulo">
+            <div class="productos-portada">
+                <div class="productos-texto">
+                    <p class="productos-etiqueta">NUESTROS PRODUCTOS <span aria-hidden="true"></span></p>
+                    <h1 id="productos-titulo">LEMA <span>Systems</span></h1>
+                    <h2>Soluciones digitales a la medida de tu empresa</h2>
+                    <p class="productos-descripcion">Transformamos tus procesos en plataformas web y aplicaciones que te ayudan a trabajar de forma más eficiente, organizada y segura.</p>
+                    <ul class="productos-ventajas">
+                        <li>Procesos más eficientes</li>
+                        <li>Información centralizada</li>
+                        <li>Mayor control y crecimiento</li>
+                        <li>Soluciones web y móviles</li>
+                    </ul>
+                    <div class="productos-acciones">
+                        <a class="productos-boton" href="#productos-servicios">Conoce nuestras soluciones <span aria-hidden="true">→</span></a>
+                        <a class="productos-boton productos-boton-secundario" href="#contactanos">Cuéntanos tu proyecto</a>
+                    </div>
+                </div>
+                <div class="productos-visual" role="img" aria-label="Ilustración de una plataforma LEMA en computadora, tableta y teléfono">
+                    <span class="productos-sello">Diseñado para<br><strong>tu forma de trabajar</strong></span>
+                    <div class="producto-laptop">
+                        <div class="producto-pantalla">
+                            <div class="producto-barra"><img src="img/LEMA.png" alt=""><span>Tu plataforma de trabajo</span></div>
+                            <div class="producto-panel">
+                                <div class="producto-menu"><b>Inicio</b><span>Procesos</span><span>Documentos</span><span>Reportes</span><span>Usuarios</span></div>
+                                <div class="producto-resumen">
+                                    <strong>Todo conectado. Todo bajo control.</strong>
+                                    <div class="producto-metricas"><span>Procesos<b>Organizados</b></span><span>Información<b>Centralizada</b></span><span>Reportes<b>En tiempo real</b></span></div>
+                                    <p>El avance de tu operación</p>
+                                    <div class="producto-grafica"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                                    <div class="producto-filas"><span>Gestión de procesos <b>En orden</b></span><span>Documentos y evidencias <b>Conectados</b></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="producto-base"></div>
+                    </div>
+                    <div class="producto-tableta"><div class="producto-dispositivo-barra">Tu operación</div><strong>Desde cualquier lugar</strong><div class="producto-cuadricula"><span>Procesos</span><span>Evidencias</span><span>Documentos</span><span>Reportes</span></div><p>✓ Información organizada</p><p>✓ Equipos conectados</p><p>✓ Mejores decisiones</p></div>
+                    <div class="producto-movil"><span class="producto-altavoz"></span><img src="img/LEMA.png" alt=""><strong>Tu empresa,<br>contigo.</strong><span class="producto-app-item">✓ Procesos</span><span class="producto-app-item">✓ Documentos</span><span class="producto-app-item">✓ Reportes</span></div>
+                    <span class="productos-nota">Desarrollamos tu solución a la medida</span>
                 </div>
             </div>
-
+            <div class="productos-servicios" id="productos-servicios">
+                <article class="producto-servicio"><span class="producto-icono"><img src="img/monitor.png" alt="" loading="lazy"></span><h3>Plataformas web a la medida</h3><p>Sistemas administrativos, portales para clientes y proveedores, gestión de usuarios y permisos.</p></article>
+                <article class="producto-servicio"><span class="producto-icono"><img src="img/cerebro.png" alt="" loading="lazy"></span><h3>Automatización e IA</h3><p>Asistentes virtuales, clasificación de información, extracción de datos y automatización de tareas.</p></article>
+                <article class="producto-servicio"><span class="producto-icono"><img src="img/documento.png" alt="" loading="lazy"></span><h3>Procesos y documentos</h3><p>Expedientes digitales, flujos de trabajo, autorizaciones, evidencias y trazabilidad.</p></article>
+                <article class="producto-servicio"><span class="producto-icono"><img src="img/graph.png" alt="" loading="lazy"></span><h3>Dashboards y reportes</h3><p>Información en tiempo real para una mejor toma de decisiones.</p></article>
+                <article class="producto-servicio"><span class="producto-icono"><img src="img/smartphone.png" alt="" loading="lazy"></span><h3>Aplicaciones de campo y móviles</h3><p>Registro de información, evidencias, GPS y operación sin conexión.</p></article>
+                <article class="producto-servicio"><span class="producto-icono"><img src="img/nube.png" alt="" loading="lazy"></span><h3>Integraciones</h3><p>Conecta sistemas existentes, correo, WhatsApp, pagos y servicios en la nube.</p></article>
+            </div>
+        </section>
+            
         <div class="que-hacemos" id="que-hacemos">
             
             <div class="foco">
@@ -44,96 +100,44 @@
                 Desde una idea hasta su implementación y soporte.</h3>
         </div>
 
-        <div class="productos" id="productos">
-            <h1>Tenemos la solucion a tus problemas</h1>
 
-            <div class="cartas">
-            <div class="carta">
-                <div class="carta-interior">
-                    <div class="frente">
-                        <img src="img/monitor.png" alt="monitor">
-                        <h3>Plataformas web a la medida</h3>
-                    </div>
-
-                    <div class="atras">
-                        <h3>Sistemas administrativos, portales para
-                            clientes y proveedores, gestión de usuarios y permisos.</h3>
+        <section class="lema-nom" id="lema-nom" aria-labelledby="lema-nom-titulo">
+            <div class="nom-encabezado">
+                <div class="nom-marca"><span>LEMA NOM</span><strong>GESTI&Oacute;N</strong><span class="nom-submarca">NORMATIVA</span></div>
+                <div><p class="nom-etiqueta">CONTROL Y CUMPLIMIENTO PARA TU EMPRESA</p><h2 id="lema-nom-titulo">Cumplimiento normativo <span>de forma digital, segura y trazable.</span></h2></div>
+            </div>
+            <div class="nom-presentacion">
+                <div class="nom-descripcion">
+                    <img src="img/documento.png" alt="" loading="lazy">
+                    <h3>Una plataforma integral para tus normas.</h3>
+                    <p>Gesti&oacute;n, registro y control de <strong>Normas Oficiales Mexicanas</strong> en una sola plataforma.</p>
+                    <p>Organiza recorridos, evidencias, mediciones y reportes para dar seguimiento al cumplimiento de tu operaci&oacute;n.</p>
+                    <a href="#contactanos" class="nom-contacto">Conoce LEMA NOM <span aria-hidden="true">&rarr;</span></a>
+                </div>
+                <div class="nom-panel" aria-label="Vista ilustrativa de la plataforma LEMA NOM">
+                    <div class="nom-panel-barra"><strong>LEMA NOM</strong><span>Vista ilustrativa</span></div>
+                    <div class="nom-panel-contenido">
+                        <h3>Cumplimiento normativo</h3>
+                        <div class="nom-estado"><div class="nom-indicador"><strong>87%</strong><span>Cumplimiento</span></div><ul><li><span class="nom-punto nom-verde"></span>Cumple</li><li><span class="nom-punto nom-amarillo"></span>En proceso</li><li><span class="nom-punto nom-rojo"></span>No cumple</li></ul></div>
+                        <div class="nom-panel-modulos">
+                            <div><img src="img/engranaje.png" alt="" loading="lazy"><span>Recorridos<br>en campo</span></div>
+                            <div><img src="img/smartphone.png" alt="" loading="lazy"><span>Evidencias<br>con foto</span></div>
+                            <div><img src="img/graph.png" alt="" loading="lazy"><span>Mediciones<br>y registros</span></div>
+                            <div><img src="img/documento.png" alt="" loading="lazy"><span>Reportes<br>auditables</span></div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="carta">
-                <div class="carta-interior">
-                    <div class="frente">
-                        <img src="img/cerebro.png" alt="cerebro">
-                        <h3>Automatización e Inteligencia Artificial</h3>
-                    </div>
-
-                    <div class="atras">
-                        <h3>Asistentes virtuales, clasificación de información, extracción de datos, 
-                        generación de documentos y automatización de tareas.</h3>
-                    </div>
-                </div>
+            <div class="nom-normas"><h3>Normas que manejamos</h3><ul aria-label="Normas disponibles"><li>NOM-011</li><li>NOM-022</li><li>NOM-025</li><li>NOM-081</li><li>NOM-020</li></ul><p>Entre otras NOM.</p></div>
+            <div class="nom-ventajas">
+                <article><img src="img/monitor.png" alt="" loading="lazy"><h3>Digitalizaci&oacute;n</h3><p>Registros y evidencias en una sola plataforma.</p></article>
+                <article><img src="img/smartphone.png" alt="" loading="lazy"><h3>Trabajo en campo</h3><p>Captura de informaci&oacute;n desde sitio.</p></article>
+                <article><img src="img/graph.png" alt="" loading="lazy"><h3>Trazabilidad y control</h3><p>Historial y seguimiento por planta y norma.</p></article>
+                <article><img src="img/nube.png" alt="" loading="lazy"><h3>Gesti&oacute;n multiempresa</h3><p>Control por plantas, sucursales y turnos.</p></article>
+                <article><img src="img/lock.png" alt="" loading="lazy"><h3>Reportes de cumplimiento</h3><p>Informaci&oacute;n clara y lista para auditor&iacute;as.</p></article>
             </div>
+        </section>
 
-            <div class="carta">
-                <div class="carta-interior">
-                    <div class="frente">
-                        <img src="img/documento.png" alt="documento">
-                        <h3>Gestión de procesos y documentos</h3>
-                    </div>
-
-                    <div class="atras">
-                        <h3>Expedientes digitales, flujos de trabajo, autorizaciones, evidencias y trazabilidad.</h3>
-                    </div>
-                </div>
-            </div>
-
-            <div class="carta">
-                <div class="carta-interior">
-                    <div class="frente">
-                        <img src="img/graph.png" alt="graph">
-                        <h3>Dashboards y reportes</h3>
-                    </div>
-
-                    <div class="atras">
-                        <h3>Información en tiempo real para una mejor toma de decisiones.</h3>
-                    </div>
-                </div>
-            </div>
-
-            <div class="carta">
-                <div class="carta-interior">
-                    <div class="frente">
-                        <img src="img/smartphone.png" alt="smartphone">
-                        <h3>Aplicaciones de campo y móviles</h3>
-                    </div>
-
-                    <div class="atras">
-                        <h3>Registro de información, evidencias, GPS y operación sin conexión.</h3>
-                    </div>
-                </div>
-            </div>
-
-            <div class="carta">
-                <div class="carta-interior">
-                    <div class="frente">
-                        <img src="img/nube.png" alt="nube">
-                        <h3>Integraciones</h3>
-                    </div>
-
-                    <div class="atras">
-                        <h3>Con sistemas existentes, correo, WhatsApp, pagos y servicios en la nube.</h3>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-        
-
-        </div>
-        
         <div class="beneficios" id="beneficios">
             <h1>Al trabajar con nosotros puedes tener total seguridad de que contaras con...</h1>
             <div class="beneficiosContainer">
@@ -157,8 +161,101 @@
             </div>
         </div>
 
-        <div class="redes" id="redes">
-            
+        <section class="lema-check" id="lema-check" aria-labelledby="check-titulo">
+            <div class="check-portada">
+                <div class="check-texto">
+                    <p class="check-etiqueta">LEMA SYSTEMS</p>
+                    <h2 id="check-titulo">LEMA <strong>Check<span aria-hidden="true">&#10003;</span></strong></h2>
+                    <h3>Control de asistencia y jornada laboral</h3>
+                    <p class="check-descripcion">Registra, gestiona y documenta la jornada de tu equipo en una plataforma web, simple y segura.</p>
+                    <a class="check-contacto" href="#contactanos">Conoce LEMA Check <span aria-hidden="true">&rarr;</span></a>
+                </div>
+                <div class="check-equipo" aria-label="Vista ilustrativa del panel de asistencia de LEMA Check">
+                    <div class="check-pantalla">
+                        <div class="check-panel-cabecera"><strong>LEMA Check<span aria-hidden="true">&#10003;</span></strong><span>Vista ilustrativa</span></div>
+                        <div class="check-panel-contenido">
+                            <h3>Asistencia del d&iacute;a</h3>
+                            <div class="check-metricas">
+                                <div class="check-empleados"><strong>48</strong><span>Empleados</span></div>
+                                <div class="check-presentes"><strong>42</strong><span>Presentes</span></div>
+                                <div class="check-retardos"><strong>3</strong><span>Retardos</span></div>
+                                <div class="check-ausencias"><strong>2</strong><span>Ausencias</span></div>
+                            </div>
+                            <p class="check-grafica-titulo">Actividad de la jornada</p>
+                            <div class="check-grafica" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                            <div class="check-panel-pie"><span>Asistencia</span><span>Turnos</span><span>Reportes</span></div>
+                        </div>
+                    </div>
+                    <div class="check-base" aria-hidden="true"></div>
+                </div>
+            </div>
+            <div class="check-funciones">
+                <article><span class="check-icono" aria-hidden="true">&#8594;</span><h3>Registro de entradas y salidas</h3></article>
+                <article><span class="check-icono"><img src="img/clock.png" alt="" loading="lazy"></span><h3>Gesti&oacute;n de turnos y horarios</h3></article>
+                <article><span class="check-icono"><img src="img/graph.png" alt="" loading="lazy"></span><h3>Control de horas e incidencias</h3></article>
+                <article><span class="check-icono"><img src="img/documento.png" alt="" loading="lazy"></span><div><h3>Reportes</h3><p>Claros y exportables.</p></div></article>
+                <article><span class="check-icono"><img src="img/lock.png" alt="" loading="lazy"></span><div><h3>Evidencia digital</h3><p>Y trazabilidad.</p></div></article>
+                <article><span class="check-icono"><img src="img/nube.png" alt="" loading="lazy"></span><h3>Multiempresa y sucursales</h3></article>
+            </div>
+            <div class="check-cierre"><img src="img/clock.png" alt="" loading="lazy"><p>Todo el control de tu equipo <strong>en una sola plataforma</strong></p></div>
+        </section>
+
+        <div class="contactanos" id="contactanos" aria-labelledby="contacto-titulo">
+            <h1 id="contacto-titulo">Contáctanos</h1>
+            <p class="contacto-intro">Estamos aquí para ayudarte. Cuéntanos sobre tu proyecto y cómo podemos ayudarte.</p>
+
+            <div class="contacto-contenido">
+                <form class="contacto-formulario" (submit)="enviarContacto($event)">
+                    <div class="contacto-campo">
+                        <label for="contacto-nombre">Nombre</label>
+                        <input id="contacto-nombre" name="nombre" type="text" autocomplete="given-name" placeholder="Nombre" required maxlength="100">
+                    </div>
+                    <div class="contacto-campo">
+                        <label for="contacto-apellidos">Apellidos</label>
+                        <input id="contacto-apellidos" name="apellidos" type="text" autocomplete="family-name" placeholder="Apellidos" required maxlength="150">
+                    </div>
+                    <div class="contacto-campo">
+                        <label for="contacto-correo">Correo electrónico</label>
+                        <input id="contacto-correo" name="correo" type="email" autocomplete="email" placeholder="Correo electrónico" required maxlength="254">
+                    </div>
+                    <div class="contacto-campo">
+                        <label for="contacto-telefono">Teléfono (opcional)</label>
+                        <input id="contacto-telefono" name="telefono" type="tel" autocomplete="tel" placeholder="Teléfono" maxlength="30">
+                    </div>
+                    <div class="contacto-campo">
+                        <label for="contacto-giro">Giro de tu empresa</label>
+                        <select id="contacto-giro" name="giro" required>
+                            <option value="" disabled selected>Selecciona el giro de tu empresa</option>
+                            <option value="servicios">Servicios profesionales y despachos</option>
+                            <option value="comercio">Comercio</option>
+                            <option value="industria">Industria y manufactura</option>
+                            <option value="tecnologia">Tecnología</option>
+                            <option value="educacion">Educación</option>
+                            <option value="salud">Salud</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="contacto-campo">
+                        <label for="contacto-mensaje">Mensaje</label>
+                        <textarea id="contacto-mensaje" name="mensaje" rows="6" placeholder="Cuéntanos que necesitas para tu proyecto" required maxlength="5000"></textarea>
+                    </div>
+                    <button class="contacto-enviar" type="submit" [disabled]="enviando"> {{ enviando ? 'Enviando…' : 'Enviar' }} </button>
+                    <p class="contacto-aviso" role="status"> {{ estadoContacto }} </p>
+                </form>
+
+                <div class="contacto-visual">
+                <div class="contacto-imagen">
+                    <!-- Puedes sustituir esta imagen por una fotografía de contacto. -->
+                    <img src="img/LEMA.png" alt="LEMA Systems">
+                    <img src="img/computer.avif" alt="Persona trabajando en una computadora" loading="lazy">
+                    <p>Transformamos tus ideas en soluciones digitales.</p>
+                </div>
+                </div>
+            </div>
+        </div>
+        
+
+<div class="redes" id="redes">  
             <div class="redesContainer">
                 <h1>síguenos</h1>
                 <div class="links">
@@ -168,12 +265,13 @@
                     <a href="" target="_blank" rel="noopener noreferrer">
                     <img src="img/instagram.png" alt="link a instagram">
                     </a>
-                    <a href="" target="_blank" rel="noopener noreferrer">
+                    <a href="https://wa.me/+528121084574" target="_blank" rel="noopener noreferrer">
                     <img src="img/whatsapp.png" alt="link a instagram">
                     </a>
                 </div>
-                
-
             </div>
         </div>
+
+        
+ 
     </main>
